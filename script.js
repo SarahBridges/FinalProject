@@ -27,7 +27,7 @@ var Earnings = function(edu)
 
   var yScale = d3.scaleBand()
                  .range([0, screen.height])
-                 .domain(data.map(function(d){return d.EducationalAttainment}));
+                 .domain(dataP.map(function(d){return d.EducationalAttainment}));
   //axes
   var xAxis = svg.append("g")
                  .attr("transform", "translate(0," + screen.height + ")")
