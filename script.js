@@ -1,8 +1,8 @@
 var dataP = d3.csv("EducationData.csv");
 
-data.then(function(dataP)
+dataP.then(function(edu)
   {
-    console.log("EDU Data", dataP)
+    console.log("data", edu)
     
     
   },
