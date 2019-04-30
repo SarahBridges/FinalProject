@@ -46,6 +46,6 @@ var Earnings = function(edu)
      .attr("x",xScale(0))
      .attr("y", function(d){return yScale(d.MedianUsualWeeklyEarnings)})
      .attr("width", function(d){return d.MedianUsualWeeklyEarnings})
-     .attr("height", yScale(bandwidth()))
+     .attr("height", yScale.bandwidth)
      .attr("fill", "blue");
 }
