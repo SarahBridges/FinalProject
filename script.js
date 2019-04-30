@@ -13,11 +13,22 @@ var screen = {height:600, width:600}
 var margins = {top:10, left:10, right: 10, bottom:10}
 
 var xScale = d3.scaleLinear()
-               .domain([])
+               .domain([0, 2000])
                .range([0, width])
+
 var yScale = d3.scaleLinear()
-               .domain([])
+               .domain([0, 10])
                .range([0, height])
+
+var xAxis = svg.append("g")
+               .attr("transform", "translate(0," + height + ")")
+               .call(d3.axisBottom(xScale))
+               .selectAll("text")
+               .attr("transform", "translate(-10,0)rotate(-45)")
+               .style("text-anchor", "end")
+
+var yAxis = svg.append("g")
+               .call(d3.asxisLeft(yScale))
 
 var Earnings = function(data)
 {
