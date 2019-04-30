@@ -2,8 +2,8 @@ var dataP = d3.csv("EducationData.csv");
 
 dataP.then(function(edu)
   {
-    console.log("data", edu)
-    
+    console.log("data", edu);
+    Earnings(edu);
     
   },
   function(err){console.log(err)})
