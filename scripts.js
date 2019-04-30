@@ -29,7 +29,7 @@ d3.csv("EducationData.csv", function(data){
      .enter()
      .append("x", x(0))
      .attr("y", function(d){return y(d.EducationalAttainment);})
-     .attr("width", function(d){return x(d.MedianUsualWeeklyEarnings;)})
+     .attr("width", function(d){return x(d.MedianUsualWeeklyEarnings);})
      .attr("fill", "blue");
 
 
