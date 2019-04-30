@@ -23,7 +23,7 @@ var Earnings = function(edu)
   //scales
   var xScale = d3.scaleLinear()
                  .domain([0, 2000])
-                 .range([0, width]);
+                 .range([0, screen.width]);
 
   var yScale = d3.scaleBand()
                  .range([0, height])
