@@ -37,7 +37,7 @@ var Earnings = function(edu)
                  .style("text-anchor", "end");
 
   var yAxis = svg.append("g")
-                 .call(d3.asxisLeft(yScale));
+                 .call(d3.axisLeft(yScale));
   //bars
   svg.selectAll("rect")
      .data(dataP)
