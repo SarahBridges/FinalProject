@@ -16,28 +16,34 @@ var Earnings = function(edu)
   var barHeight = screen.height/edu.length;
 
   var margins = {top:10, left:10, right: 10, bottom:10};
+  
+  var width = screen.width - margins.left - margins.right;
+  var height = screen.height = margins.top - margins.bottom;
+  
   //grab svg
-  var svg = d3.select("svg")
-              .attr("width", screen.width)
-              .attr("height", screen.height);
+  var svg = d3.select("#chart")
+              .attr("width", width)
+              .attr("height", height);
   //scales
   var xScale = d3.scaleLinear()
                  .domain([0, 2000])
-                 .range([0, screen.width]);
+                 .range([0, width]);
 
-  var yScale = d3.scaleBand()
-                 .range([0, screen.height])
-                 .domain(function(d){return d.EducationalAttainment});
+  var yScale = d3.scaleLinear()
+                 .domain([0,10])
+                .range([height, 0]);
+  //var plotLand
+  
   //axes
-  var xAxis = svg.append("g")
-                 .attr("transform", "translate(0," + screen.height + ")")
-                 .call(d3.axisBottom(xScale))
-                 .selectAll("text")
-                 .attr("transform", "translate(-10,0)rotate(-45)")
-                 .style("text-anchor", "end");
+  var xAxis = d3.axisBottom(xScale);
+      svg.append("g").classed("xAis", true)
+                     .call(xAxis)
+                     .attr("transform", "translate(" margins.left + "," + (margins.top+height) + ")");
 
-  var yAxis = svg.append("g")
-                 .call(d3.axisLeft(yScale));
+  var yAxis = d3.axisLeft(yScale);
+      svg.append("g").classed("yAxis", true)
+                 .call(yAxis)
+                 .("transform", "translate(" + margins.left + ", 10)");
   //bars
   svg.selectAll("rect")
      .data(dataP)
@@ -49,3 +55,4 @@ var Earnings = function(edu)
      .attr("height", yScale.bandwidth)
      .attr("fill", "blue");
 }
+// #factors #chart
