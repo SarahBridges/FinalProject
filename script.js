@@ -40,14 +40,14 @@ var Earnings = function(edu)
   var xAxis = d3.axisBottom(xScale);
       svg.append("g").classed("xAis", true)
                      .call(xAxis)
-                     .attr("transform", "translate(" + margins.left + "," + (margins.top+height) + ")")
-                     .selectAll("text").data(edu).enter().append("text")
-                     .text(function(d){return d.EducationalAttainment});
+                     .attr("transform", "translate(" + margins.left + "," + (margins.top+height) + ")");
 
   var yAxis = d3.axisLeft(yScale);
       svg.append("g").classed("yAxis", true)
                  .call(yAxis)
-                 .attr("transform", "translate(" + (margins.left+50) + ", 10)");
+                 .attr("transform", "translate(" + (margins.left+50) + ", 10)")
+                 .selectAll("text").data(edu).enter().append("text")
+                 .text(function(d){return d.EducationalAttainment});
   //bars
   svg.selectAll("rect")
      .data(dataP)
