@@ -42,12 +42,13 @@ var Earnings = function(edu)
                      .call(xAxis)
                      .attr("transform", "translate(" + margins.left + "," + (margins.top+height) + ")");
 
-  var yAxis = d3.axisLeft(yScale);
-    yAxis.selectAll("text").data(edu).enter().apped("text")
-         .text(function(d){return d.EducationalAttainment});
+  var yAxis = d3.axisLeft(yScale)
+                .ticks(9)
+                .tickFormat(function(d,i){return d.EducationalAttainment});
       svg.append("g").classed("yAxis", true)
                  .call(yAxis)
                  .attr("transform", "translate(" + (margins.left+50) + ", 10)");
+  
   //bars
   svg.selectAll("rect")
      .data(dataP)
