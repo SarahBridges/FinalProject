@@ -18,7 +18,7 @@ var Earnings = function(edu)
   var margins = {top:10, left:10, right: 10, bottom:10};
   
   var width = screen.width - margins.left - margins.right;
-  var height = screen.height = margins.top - margins.bottom;
+  var height = screen.height - margins.top - margins.bottom;
   
   //grab svg
   var svg = d3.select("#chart")
