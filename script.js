@@ -15,7 +15,7 @@ var Earnings = function(edu)
 
   var barHeight = screen.height/edu.length;
 
-  var margins = {top:30, left:100, right: 30, bottom:30};
+  var margins = {top:10, left:100, right: 10, bottom:10};
   
   var width = screen.width - margins.left - margins.right;
   var height = screen.height - margins.top - margins.bottom;
