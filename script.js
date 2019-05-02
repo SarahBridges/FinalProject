@@ -51,7 +51,7 @@ var Earnings = function(edu)
   
   //bars
   svg.selectAll("rect")
-     .data(dataP)
+     .data(edu)
      .enter()
      .append("rect")
      .attr("x",xScale(0))
