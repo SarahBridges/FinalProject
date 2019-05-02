@@ -47,7 +47,7 @@ var Earnings = function(edu)
                 .tickFormat(function(d,i){console.log("d.EA",edu[d].EducationalAttainment); return edu[d].EducationalAttainment});
       svg.append("g").classed("yAxis", true)
                  .call(yAxis)
-                 .attr("transform", "translate(" + (margins.left+50) + ", 10)");
+                 .attr("transform", "translate(" + (margins.left+100) + ", 30)");
   
   //bars
   svg.selectAll("rect")
