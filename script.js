@@ -33,7 +33,9 @@ var Earnings = function(edu)
                  .domain([0,10])
                 .range([height, 0]);
   //var plotLand
-  
+  var plotLand = svg.append("g")
+                    .classed("plot", true)
+                    .attr("transform", "translate(30, 30)");
   //axes
   var xAxis = d3.axisBottom(xScale);
       svg.append("g").classed("xAis", true)
