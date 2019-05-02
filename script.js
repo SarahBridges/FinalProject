@@ -41,7 +41,8 @@ var Earnings = function(edu)
       svg.append("g").classed("xAis", true)
                      .call(xAxis)
                      .attr("transform", "translate(" + margins.left + "," + (margins.top+height) + ")")
-                     .attr("text", function(d){return d.EducationalAttainment});
+                     .selectAll("text").data(edu).enter().append("text")
+                     .text(function(d){return d.EducationalAttainment});
 
   var yAxis = d3.axisLeft(yScale);
       svg.append("g").classed("yAxis", true)
