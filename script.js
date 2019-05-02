@@ -13,12 +13,11 @@ var Earnings = function(edu)
   //measurements
   var screen = {height:600, width:600};
 
-  var barHeight = screen.height/edu.length;
-
   var margins = {top:10, left:100, right: 10, bottom:10};
   
   var width = screen.width - margins.left - margins.right;
   var height = screen.height - margins.top - margins.bottom;
+  var barHeight = height/edu.length;
   
   //grab svg
   var svg = d3.select("#chart")
