@@ -35,7 +35,7 @@ var Earnings = function(edu)
   //var plotLand
   var plotLand = svg.append("g")
                     .classed("plot", true)
-                    .attr("transform", "translate(30, 30)");
+                    .attr("transform", "translate(70, 50)");
   //axes
   var xAxis = d3.axisBottom(xScale);
       svg.append("g").classed("xAis", true)
