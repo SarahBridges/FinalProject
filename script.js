@@ -35,17 +35,17 @@ var Earnings = function(edu)
   //var plotLand
   var plotLand = svg.append("g")
                     .classed("plot", true)
-                    .attr("transform", "translate(10, 10)");
+                    .attr("transform", "translate(30, 30)");
   //axes
   var xAxis = d3.axisBottom(xScale);
       svg.append("g").classed("xAis", true)
                      .call(xAxis)
-                     .attr("transform", "translate(" + margins.left + "," + (margins.top+height+20) + ")");
+                     .attr("transform", "translate(" + margins.left + "," + (margins.top+height+40) + ")");
 
   var yAxis = d3.axisLeft(yScale);
       svg.append("g").classed("yAxis", true)
                  .call(yAxis)
-                 .attr("transform", "translate(" + margins.left + ", 50)");
+                 .attr("transform", "translate(" + margins.left + ", 10)");
   //bars
   svg.selectAll("rect")
      .data(dataP)
