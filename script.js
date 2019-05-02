@@ -44,7 +44,7 @@ var Earnings = function(edu)
 
   var yAxis = d3.axisLeft(yScale)
                 .ticks(9)
-                .tickFormat(function(d,i){console.log("d.EA",edu[d].EducationalAttainment); return edu[d].EducationalAttainment});
+                .tickFormat(function(d,i){console.log("d.EA",d[i].EducationalAttainment); return d[i].EducationalAttainment});
       svg.append("g").classed("yAxis", true)
                  .call(yAxis)
                  .attr("transform", "translate(" + (margins.left+100) + ", 30)");
