@@ -20,7 +20,8 @@ var drawChart=function(edu)
     {return i*barWidth;})
   .attr("y", function(d)
     {
-     return height-d.UnemploymentRate})
+     console.log(d.UnemploymentRate);
+     return height-d.UnemploymentRate;})
   .attr("width", barWidth)
   .attr("height", function(d)
     {console.log(d);return height-d.UnemploymentRate})
