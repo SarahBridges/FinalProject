@@ -5,7 +5,7 @@ var drawChart=function(edu)
   var width=600;
   var height=600;
   var barWidth=width/edu.length;
-  console.log(height);
+  console.log(edu);
   
   var svg=
   d3.select("#chart")
