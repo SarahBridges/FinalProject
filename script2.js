@@ -25,7 +25,7 @@ var drawChart=function(dataP)
   
   var yScale = d3.scaleBand()
                  .range([0,height])
-                .domain(dataP.map(fuction(d){return d.UnemploymentRate}));
+                .domain(dataP.map(function(d){return d.UnemploymentRate}));
   svg.append("g")
      .call(d3.axisLeft(yScale))
      //.classed("yAxis", true).call(yAxis)
