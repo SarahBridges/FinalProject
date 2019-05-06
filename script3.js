@@ -37,9 +37,25 @@ var drawAxes = function(data)
                  .domain([0,d3.max(data)])
                  .range([height,0]);
   
-  var yAxis = d3.axisLeft(yScale).tickFormat(function(d){return data.EducationalAttainment})
-  svg.append("g").classed("yAxis", true).call(yAxis)
-     .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
+//   var yAxis = d3.axisLeft(yScale).tickFormat(function(d){return data.EducationalAttainment})
+//   svg.append("g").classed("yAxis", true).call(yAxis)
+//      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
+  
+  /////
+  var xAxis = d3.axisBottom(xScale);
+    svg.append("g").classed("xAis", true)
+                     .call(xAxis)
+                     .attr("transform", "translate(" + margins.left + "," + (margins.top+height) + ")");
+
+  var yAxis = d3.axisLeft(yScale)
+                .ticks(9)
+                .tickFormat(function(d,i)
+                  {console.log("d.EA",edu[d].EducationalAttainment); 
+                   return edu[d].EducationalAttainment});
+      svg.append("g").classed("yAxis", true)
+                 .call(yAxis)
+                 .attr("transform", "translate(" + (margins.left+100) + ", 30)");
+
 }
 
 var drawLabels = function(data)
