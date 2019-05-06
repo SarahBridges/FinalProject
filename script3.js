@@ -23,6 +23,7 @@ var drawChart = function(data)
      .attr("y", function(d,i){return i*barheight;})
      .attr("width", function(d){return d.UnemploymentRate*100})
      .attr("height", barheight)
+     .attr("fill", "teal")
 }
 
 var drawLabels = function(data)
@@ -44,7 +45,7 @@ var drawLabels = function(data)
      .text(function(d){return d.UnemploymentRate})
      .attr("x", function(d,i){return d.UnemploymentRate})
      .attr("y", function(d,i){return ((i*barheight)+50)})
-     .attr("fill", "blue")
+     .attr("fill", "white")
 }
 
 data.then(function(data)
