@@ -38,7 +38,7 @@ var drawChart2 = function(data)
      .attr("x", function(d,i)
            {console.log("d", d); 
             console.log("d.UR", d.UnemploymentRate); 
-            return height - d.UnemploymentRate;})
+            return d.UnemploymentRate;})
      .attr("y", function(d,i){return i*barheight;})
      .attr("width", function(d){return d.UnemploymentRate})
      .attr("height", barheight)
