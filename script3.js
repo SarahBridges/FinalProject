@@ -18,10 +18,10 @@ var drawChart = function(data)
      .append("rect")
      .attr("x", function(d,i)
            {console.log("d", d); 
-            console.log("d.UR", d.UnemploymentRate); 
-            return d.UnemploymentRate;})
+            console.log("d.MUWE", d.MedianUsualWeeklyEarnings); 
+            return d.MedianUsualWeeklyEarnings;})
      .attr("y", function(d,i){return i*barheight;})
-     .attr("width", function(d){return d.UnemploymentRate*100})
+     .attr("width", function(d){return d.MedianUsualWeeklyEarnings})
      .attr("height", barheight)
      .attr("fill", "teal")
      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
@@ -82,8 +82,8 @@ var drawLabels = function(data)
      .data(data)
      .enter()
      .append("text")
-     .text(function(d){return d.UnemploymentRate})
-     .attr("x", function(d,i){return d.UnemploymentRate})
+     .text(function(d){return d.MedianUsualWeeklyEarnings})
+     .attr("x", function(d,i){return d.MedianUsualWeeklyEarnings})
      .attr("y", function(d,i){return ((i*barheight)+50)})
      .attr("fill", "black")
      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
