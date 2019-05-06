@@ -18,7 +18,7 @@ var drawChart = function(data)
                             console.log("d.UR",d.UnemploymentRate); 
                             return height - d.UnemploymentRate})
      .attr("width", barwidth)
-     .attr("height", function(d){return d.UnemploymentRate*400})
+     .attr("height", function(d){return d.UnemploymentRate*100})
      .attr("fill", "blue")
 
 }
