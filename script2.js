@@ -31,7 +31,7 @@ var drawChart=function(dataP)
      //.classed("yAxis", true).call(yAxis)
 
   svg.selectAll("rect").data(dataP).enter().append("rect")
-     .attr("x", xScale(0)
+     .attr("x", xScale(0))
      .attr("y", yScale(function(d){return d.UnemploymentRate})
      .attr("width", function(d){return xScale(d.UnemploymentRate)})
      .attr("height", yScale.bandwidth())
