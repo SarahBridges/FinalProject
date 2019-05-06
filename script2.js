@@ -15,12 +15,12 @@ var drawChart=function(dataP)
   var yScale = d3.scaleLinear().domain([0,dataP.length]).range([height,0]);
 
   svg.selectAll("rect").data(dataP).enter().append("rect")
-     .attr("y", function(d){return yScale(d.EducationalAttainmentP)})
-     .attr("x", function(d,i){return xScale(barHeight*i)})
+     .attr("y", function(d){return d.EducationalAttainmentP})
+     .attr("x", function(d,i){return (barHeight*i)})
      .attr("fill", "blue")
   
-  var xAxis = d3.axisBottom(xScale).ticks(10)
-  var yAxis = d3.axisLeft(yScale).ticks(dataP.lentgh)
+  //var xAxis = d3.axisBottom(xScale).ticks(10)
+  //var yAxis = d3.axisLeft(yScale).ticks(dataP.lentgh)
   
   svg.append("g").classed("xAxis", true).call(xAxis)
   svg.append("g").classed("yAxis", true).call(yAxis)
