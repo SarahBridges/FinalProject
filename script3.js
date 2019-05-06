@@ -58,6 +58,7 @@ var drawAxes = function(data)
   svg.append("g").classed("yAxis", true)
      .call(yAxis)
      .attr("transform", "translate(110, 10)")
+     .tickFormat(function(d,i){return d.EducationalAttainment})
   
 //    .attr("fill", "black")
 //     .ticks(9)
