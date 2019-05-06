@@ -40,7 +40,7 @@ var drawChart2 = function(data)
             console.log("d.UR", d.UnemploymentRate); 
             return d.UnemploymentRate;})
      .attr("y", function(d,i){return i*barheight;})
-     .attr("width", function(d){return d.UnemploymentRate*500})
+     .attr("width", function(d){return d.UnemploymentRate*100})
      .attr("height", barheight)
 }
 
