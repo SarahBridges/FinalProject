@@ -32,8 +32,9 @@ var drawChart = function(data)
      .attr("width", function(d){return d.UnemploymentRate*100})
      .attr("height", barheight)
      .attr("fill", "teal")
+     .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
   
-  var yAxis = d3.axisLeft(yScale).ticks(function(d){return d.EducationalAttainment}).tickSize(1)
+  var yAxis = d3.axisLeft(yScale).ticks(data.EducationalAttainment}).tickSize(1)
   svg.append("g").classed("yAxis", true).call(yAxis)
      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
 }
