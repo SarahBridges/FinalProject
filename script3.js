@@ -37,7 +37,7 @@ var drawAxes = function(data)
   
   var svg = d3.select("#chart")
               .attr("width", width+100)
-              .attr("height", height)
+              .attr("height", height+100)
   
   var xScale = d3.scaleLinear()
                  .domain([0, 2000])
@@ -51,40 +51,11 @@ var drawAxes = function(data)
   
   svg.append("g").classed("xAxis", true)
      .call(xAxis)
-     .attr("transform", "translate(10,100)")
+     .attr("transform", "translate(20,620)")
 //    .attr("fill", "black")
 //     .ticks(9)
 //     .tickFormat()
 //     .attr("transform", "translate(" + margins.left+","+(margins.top+height+")"))
-  
-  
-  
-//   var yScale = d3.scaleLinear()
-//                  .domain([0, data.length])
-//                  .range([0,width]);
-
-//   var xScale = d3.scaleLinear()
-//                  .domain([0,d3.max(data)])
-//                  .range([height,0]);
-  
-// //   var yAxis = d3.axisLeft(yScale).tickFormat(function(d){return data.EducationalAttainment})
-// //   svg.append("g").classed("yAxis", true).call(yAxis)
-// //      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
-  
-//   /////
-//   var xAxis = d3.axisBottom(xScale);
-//     svg.append("g").classed("xAis", true)
-//                      .call(xAxis)
-//                      .attr("transform", "translate(" + margins.left + "," + (margins.top+height) + ")");
-
-//   var yAxis = d3.axisLeft(yScale)
-//                 .ticks(9)
-//                 .tickFormat(function(d,i)
-//                   {console.log("d.EA",edu[d].EducationalAttainment); 
-//                    return edu[d].EducationalAttainment});
-//       svg.append("g").classed("yAxis", true)
-//                  .call(yAxis)
-//                  .attr("transform", "translate(" + (margins.left+100) + ", 30)");
 
 }
 
