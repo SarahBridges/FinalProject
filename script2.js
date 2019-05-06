@@ -17,7 +17,7 @@ var drawChart=function(dataP)
   svg.selectAll("rect").data(dataP).enter().append("rect")
      .attr("width", function(d){return xScale(d.EducationalAttainmentP)}).attr("height", function(d,i){return (barHeight*i)})
   
-  var xAxis = d3.axisBottom(xScale).ticks(10)
+  var xAxis = d3.axisTop(xScale).ticks(10)
   var yAxis = d3.axisLeft(yScale).ticks(dataP.lentgh)
   
   svg.append("g").classed("xAxis", true).call(xAxis)
