@@ -51,13 +51,13 @@ var drawAxes = function(data)
   
   svg.append("g").classed("xAxis", true)
      .call(xAxis)
-     .attr("transform", "translate(20,620)")
+     .attr("transform", "translate(110,620)")
   
   var yAxis = d3.axisLeft().scale(yScale)
   
   svg.append("g").classed("yAxis", true)
      .call(yAxis)
-     .attr("transform", "translate(100, 20)")
+     .attr("transform", "translate(110, 10)")
   
 //    .attr("fill", "black")
 //     .ticks(9)
