@@ -51,6 +51,7 @@ var drawAxes = function(data)
   
   svg.append("g").classed("xAxis", true)
      .call(xAxis)
+     .attr("transform", "translate(0,"+(margins.top+height)+")")
 //    .attr("fill", "black")
 //     .ticks(9)
 //     .tickFormat()
