@@ -15,6 +15,7 @@ var drawChart = function(data)
      .append("rect")
      .attr("x", function(d,i){return i*barwidth;})
      .attr("y", function(d){console.log("d",d); console.log("d.UR",d.UnemploymentRate); return height - d.UnemploymentRate})
+     .attr("fill", "blue")
 
 }
 
