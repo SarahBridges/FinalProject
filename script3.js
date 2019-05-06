@@ -36,7 +36,7 @@ var drawAxes = function(data)
   var barheight = height/data.length;
   
   var svg = d3.select("#chart")
-              .attr("width", width)
+              .attr("width", width-30)
               .attr("height", height)
   
   var xScale = d3.scaleLinear()
