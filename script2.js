@@ -22,3 +22,6 @@ var drawChart=function(dataP)
   
   svg.append("g").classed("xAxis", true).call(xAxis)
   svg.append("g").classed("yAxis", true).call(yAxis)
+}
+
+dataP.then(function(dataP){drawChart(dataP)},function(err){console.log(err)})
