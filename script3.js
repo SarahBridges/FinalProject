@@ -29,6 +29,12 @@ var drawChart = function(data)
 }
 var drawAxes = function(data)
 {
+  var screen = {width: 600, height:600}
+  var margins = {top:10, bottom:10, left:100, right:10}
+  var width = screen.width-margins.left-margins.right
+  var height = screen.height-margins.top-margins.bottom
+  var barheight = height/data.length;
+  
   var xScale = d3.scaleLinear()
                  .domain([0,5])
                  .range([height, 0])
@@ -40,6 +46,7 @@ var drawAxes = function(data)
   var xAxis = d3.svg.axis()
                     .scale(xScale)
                     .orient("bottom")
+                    .ticks(5)
   
   svg.append("g")
      .call(xAxis)
