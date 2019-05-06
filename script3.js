@@ -66,7 +66,7 @@ data.then(function(data)
 {
   console.log("data:", data);
   console.log("page building failed??");
-  //drawChart(data);
+  drawChart(data);
   drawLabels(data);
 },
 function(err){console.log(err);
