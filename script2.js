@@ -1,7 +1,5 @@
-var dataP = d3.csv("EducationData.csv");
+d3.csv("EducationData.csv", function(data){
 
-var drawChart=function(dataP)
-{
   console.log("dataP:", dataP)
   var screen = {height: 600, width:600}
   var margins = {top:10, bottom:10, left:10, right:10}
@@ -46,4 +44,9 @@ var drawChart=function(dataP)
 
 }
 
-dataP.then(function(dataP){drawChart(dataP)},function(err){console.log(err)})
+);
+//var dataP =
+//var drawChart=function(dataP)
+//{
+//dataP.then(function(dataP){drawChart(dataP)},function(err){console.log(err)})
+
