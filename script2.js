@@ -19,7 +19,7 @@ var drawChart=function(dataP)
      .attr("x", function(d,i){return xScale(barHeight*i)})
      .attr("fill", "blue")
   
-  var xAxis = d3.axisTop(xScale).ticks(10)
+  var xAxis = d3.axisBottom(xScale).ticks(10)
   var yAxis = d3.axisLeft(yScale).ticks(dataP.lentgh)
   
   svg.append("g").classed("xAxis", true).call(xAxis)
