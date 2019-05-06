@@ -1,12 +1,13 @@
 var data = d3.csv("EducationData.csv");
 
-var drawChart = function(data)
-{
   var screen = {width: 600, height:600}
-  var margins = {top:50, bottom:50, left:50, right:50}
+  var margins = {top:10, bottom:10, left:100, right:10}
   var width = screen.width-margins.left-margins.right
   var height = screen.height-margins.top-margins.bottom
   var barheight = height/data.length;
+
+var drawChart = function(data)
+{
   var svg = d3.select("#chart")
               .attr("width", width)
               .attr("height", height)
@@ -26,11 +27,6 @@ var drawChart = function(data)
 
 var drawLabels = function(data)
 {
-  var screen = {width: 600, height:600}
-  var margins = {top:50, bottom:50, left:50, right:50}
-  var width = screen.width-margins.left-margins.right
-  var height = screen.height-margins.top-margins.bottom
-  var barheight = height/data.length;
   var svg = d3.select("#chart")
               .attr("width", width)
               .attr("height", height)
