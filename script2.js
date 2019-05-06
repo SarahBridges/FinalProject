@@ -32,7 +32,7 @@ var drawChart=function(dataP)
 
   svg.selectAll("rect").data(dataP).enter().append("rect")
      .attr("x", xScale(0))
-     .attr("y", yScale(function(d){return d.UnemploymentRate})
+     .attr("y", yScale(function(d){return d.UnemploymentRate}))
      .attr("width", function(d){return xScale(d.UnemploymentRate)})
      .attr("height", yScale.bandwidth())
      //.attr("fill", "blue");
