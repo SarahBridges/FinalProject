@@ -2,34 +2,12 @@ var data = d3.csv("EducationData.csv");
 
 var drawChart = function(data)
 {
-  var width = 600;
-  var height = 600;
-  var barwidth = width/data.length;
+  var screen = {width: 600, height:600}
+  var margins = {top:50, bottom:50, left:50, right:50}
+  var barheight = screen.height/data.length;
   var svg = d3.select("#chart")
-              .attr("width", width)
-              .attr("height", height)
-  
-  svg.selectAll("rect")
-     .data(data)
-     .enter()
-     .append("rect")
-     .attr("x", function(d,i){return i*barwidth;})
-     .attr("y", function(d){console.log("d",d); 
-                            console.log("d.UR",d.UnemploymentRate); 
-                            return height - d.UnemploymentRate})
-     .attr("width", barwidth)
-     .attr("height", function(d){return d.UnemploymentRate*100})
-     .attr("fill", "blue")
-
-}
-var drawChart2 = function(data)
-{
-  var width = 600;
-  var height = 600;
-  var barheight = height/data.length;
-  var svg = d3.select("#chart")
-              .attr("width", width)
-              .attr("height", height)
+              .attr("width", screen.width-margins.left-margins.right)
+              .attr("height", screen.height-margins.top-margins.bottom)
   
   svg.selectAll("rect")
      .data(data)
@@ -46,13 +24,13 @@ var drawChart2 = function(data)
 
 var drawLabels = function(data)
 {
-  var width = 600;
-  var height = 600;
-  var barheight = height/data.length;
-  
+   var screen = {width: 600, height:600}
+  var margins = {top:50, bottom:50, left:50, right:50}
+  var barheight = screen.height/data.length;
   var svg = d3.select("#chart")
-              .attr("width", width)
-              .attr("height", height)
+              .attr("width", screen.width-margins.left-margins.right)
+              .attr("height", screen.height-margins.top-margins.bottom)
+  
   svg.selectAll("text")
      .data(data)
      .enter()
@@ -66,7 +44,7 @@ var drawLabels = function(data)
 data.then(function(data)
 {
   console.log("data:", data);
-  drawChart2(data);
+  drawChart(data);
   drawLabels(data);
 },
 function(err){console.log(err);
