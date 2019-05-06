@@ -47,13 +47,11 @@ var drawAxes = function(data)
                  .domain([0, data.length])
                  .range([0, width])
   
-  var xAxis = d3.svg.axis()
-                    .scale(xScale)
-                    .orient("bottom")
-                    .ticks(5)
+  var xAxis = d3.axisBottom(xScale)
   
-  svg.append("g")
+  svg.append("g").classed("xAxis", true)
      .call(xAxis)
+     .attr("transform", "translate(" + margins.left+","+(margins.top+height+")"))
   
   
   
