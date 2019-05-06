@@ -57,7 +57,7 @@ var drawAxes = function(data)
   
   svg.append("g").classed("yAxis", true)
      .call("yAxis")
-     .attr("transform", "translate(20, 20)")
+     .attr("transform", "translate(100, 20)")
   
 //    .attr("fill", "black")
 //     .ticks(9)
@@ -93,8 +93,8 @@ data.then(function(data)
 {
   console.log("data:", data);
   console.log("page building failed??");
-  drawChart(data);
-  drawLabels(data);
+  //drawChart(data);
+  //drawLabels(data);
   drawAxes(data);
 },
 function(err){console.log(err);
