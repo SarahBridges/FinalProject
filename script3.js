@@ -56,7 +56,7 @@ var drawAxes = function(data)
   var yAxis = d3.axisLeft().scale(yScale)
   
   svg.append("g").classed("yAxis", true)
-     .call("yAxis")
+     .call(yAxis)
      .attr("transform", "translate(100, 20)")
   
 //    .attr("fill", "black")
