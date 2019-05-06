@@ -93,8 +93,8 @@ data.then(function(data)
 {
   console.log("data:", data);
   console.log("page building failed??");
-  //drawChart(data);
-  //drawLabels(data);
+  drawChart(data);
+  drawLabels(data);
   drawAxes(data);
 },
 function(err){console.log(err);
