@@ -13,7 +13,7 @@ var drawChart=function(dataP)
   
   var xScale = d3.scaleLinear().domain([0, 2000]).range([0, width]);
   var yScale = d3.scaleLinear().domain([0,dataP.length]).range([height,0]);
-  
+
   svg.selectAll("rect").data(dataP).enter().append("rect")
      .attr("y", function(d){return yScale(d.EducationalAttainmentP)}).attr("x", function(d,i){return xScale(barHeight*i)})
   
