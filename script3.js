@@ -40,19 +40,21 @@ var drawAxes = function(data)
               .attr("height", height)
   
   var xScale = d3.scaleLinear()
-                 .domain([0,5])
+                 .domain([0, 2000])
                  .range([0, width])
   
   var yScale = d3.scaleLinear()
                  .domain([0, data.length])
                  .range([height, 0])
   
-  var xAxis = d3.axisBottom(xScale)
+  var xAxis = d3.axisBottom().scale(xScale)
   
   svg.append("g").classed("xAxis", true)
      .call(xAxis)
      .attr("fill", "black")
      .attr("transform", "translate(" + margins.left+","+(margins.top+height+")"))
+     .ticks(9)
+     .tickFormat()
   
   
   
