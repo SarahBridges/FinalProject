@@ -15,7 +15,7 @@ var drawChart=function(dataP)
   var yScale = d3.scaleLinear().domain([0,dataP.length]).range([height,0]);
   
   svg.selectAll("rect").data(dataP).enter().append("rect")
-     .attr("width", function(d){return xScale(d.EducationalAttainmentP)}).attr("height", function(d,i){return (barHeight*i)})
+     .attr("x", function(d){return xScale(d.EducationalAttainmentP)}).attr("y", function(d,i){return (barHeight*i)})
   
   var xAxis = d3.axisTop(xScale).ticks(10)
   var yAxis = d3.axisLeft(yScale).ticks(dataP.lentgh)
