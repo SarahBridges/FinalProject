@@ -1,11 +1,11 @@
 var dataP = d3.csv("EducationData.csv");
 
-var drawChart=function(edu)
+var drawChart=function(dataP)
 {
   var width=600;
   var height=600;
-  var barWidth=width/edu.length;
-  console.log(edu);
+  var barWidth=width/dataP.length;
+  console.log(dataP);
   
   var svg=
   d3.select("#chart")
@@ -13,7 +13,7 @@ var drawChart=function(edu)
   .attr("height", height)
   
   svg.selectAll("rect")
-  .data(edu)
+  .data(dataP)
   .enter()
   .append("rect")
   .attr("x", function(d,i)
@@ -29,45 +29,45 @@ var drawChart=function(edu)
     {return "deepskyblue";})
 }
 
-var drawLabels=function(edu)
+var drawLabels=function(dataP)
   {
     var width=600;
     var height=600;
-    var barWidth=width/edu.length;
+    var barWidth=width/dataP.length;
 
     var svg=d3.select("#chart")
     .attr("width", width)
     .attr("height", height)
   svg.selectAll("text")
-  .data(edu)
+  .data(dataP)
   .enter()
   .append("text")
   .text(function(d){
     return d.UnemploymentRate;})
   .attr("x", function(d,i){
-    return i * (width / edu.length) +25;
+    return i * (width / dataP.length) +25;
   })
   .attr("y", function(d){
     return height-(d.UnemploymentRate)+12;
   })
   .attr("fill", "black");
   }
-var drawNameLabels=function(edu)
+var drawNameLabels=function(dataP)
 {
    var width=600;
    var height=600;
-   var barWidht=width/edu.lenth;
+   var barWidht=width/dataP.lenth;
   
   var svg=d3.select("#chart")
   .attr("width", width)
   .attr("height", height)
   
   svg.selectAll("text")
-  .data(edu)
+  .data(dataP)
   .enter()
   .append("text")
   .text(function(d){return d.EducationalAttainment;})
-  .attr("x", function(d,i){return i*(width/edu.length)+30;})
+  .attr("x", function(d,i){return i*(width/dataP.length)+30;})
   .attr("fill", "black");
 }
 
