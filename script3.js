@@ -58,7 +58,7 @@ var drawLabels = function(data)
      .text(function(d){return d.UnemploymentRate})
      .attr("x", function(d,i){return d.UnemploymentRate})
      .attr("y", function(d,i){return ((i*barheight)+50)})
-     .attr("fill", "white")
+     .attr("fill", "black")
      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
 }
 
@@ -66,7 +66,7 @@ data.then(function(data)
 {
   console.log("data:", data);
   console.log("page building failed??");
-  drawChart(data);
+  //drawChart(data);
   drawLabels(data);
 },
 function(err){console.log(err);
