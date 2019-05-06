@@ -34,7 +34,7 @@ var drawChart = function(data)
      .attr("fill", "teal")
      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
   
-  var yAxis = d3.axisLeft(yScale).tickValues(data.EducationalAttainment)
+  var yAxis = d3.axisLeft(yScale).tickFormat(function(d){return data.EducationalAttainment})
   svg.append("g").classed("yAxis", true).call(yAxis)
      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
 }
