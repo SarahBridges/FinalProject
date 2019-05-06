@@ -12,6 +12,14 @@ var drawChart = function(data)
               .attr("width", width)
               .attr("height", height)
   
+  var yScale = d3.scaleLinear()
+                 .domain([0, data.length])
+                 .range([0,width]);
+
+  var xScale = d3.scaleLinear()
+                 .domain([0,d3.max(data)])
+                 .range([height,0]);
+  
   svg.selectAll("rect")
      .data(data)
      .enter()
@@ -24,6 +32,9 @@ var drawChart = function(data)
      .attr("width", function(d){return d.UnemploymentRate*100})
      .attr("height", barheight)
      .attr("fill", "teal")
+  
+  var yAxis = d3.axisLeft(yScale).ticks(function(d){return d.EducationalAttainment}).tickSize(1)
+  svg.append("g").classed("yAxis", true).call(yAxis)
 }
 
 var drawLabels = function(data)
