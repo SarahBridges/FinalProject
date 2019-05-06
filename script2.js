@@ -35,7 +35,7 @@ var drawChart=function(dataP)
      .attr("y", yScale(function(d){return d.UnemploymentRate})
      .attr("width", function(d){return xScale(d.UnemploymentRate)})
      .attr("height", yScale.bandwidth())
-//     .attr("fill", "blue");
+     .attr("fill", "blue");
   
   //var xAxis = d3.axisBottom(xScale).ticks(10)
   //var yAxis = d3.axisLeft(yScale).ticks(dataP.lentgh)
