@@ -35,6 +35,7 @@ var drawChart = function(data)
   
   var yAxis = d3.axisLeft(yScale).ticks(function(d){return d.EducationalAttainment}).tickSize(1)
   svg.append("g").classed("yAxis", true).call(yAxis)
+     .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
 }
 
 var drawLabels = function(data)
