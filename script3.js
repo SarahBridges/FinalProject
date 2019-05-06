@@ -29,32 +29,49 @@ var drawChart = function(data)
 }
 var drawAxes = function(data)
 {
+  var xScale = d3.scaleLinear()
+                 .domain([0,5])
+                 .range([height, 0])
+  
   var yScale = d3.scaleLinear()
                  .domain([0, data.length])
-                 .range([0,width]);
-
-  var xScale = d3.scaleLinear()
-                 .domain([0,d3.max(data)])
-                 .range([height,0]);
+                 .range([0, width])
   
-//   var yAxis = d3.axisLeft(yScale).tickFormat(function(d){return data.EducationalAttainment})
-//   svg.append("g").classed("yAxis", true).call(yAxis)
-//      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
+  var xAxis = d3.svg.axis()
+                    .scale(xScale)
+                    .orient("bottom")
   
-  /////
-  var xAxis = d3.axisBottom(xScale);
-    svg.append("g").classed("xAis", true)
-                     .call(xAxis)
-                     .attr("transform", "translate(" + margins.left + "," + (margins.top+height) + ")");
+  svg.append("g")
+     .call(xAxis)
+  
+  
+  
+//   var yScale = d3.scaleLinear()
+//                  .domain([0, data.length])
+//                  .range([0,width]);
 
-  var yAxis = d3.axisLeft(yScale)
-                .ticks(9)
-                .tickFormat(function(d,i)
-                  {console.log("d.EA",edu[d].EducationalAttainment); 
-                   return edu[d].EducationalAttainment});
-      svg.append("g").classed("yAxis", true)
-                 .call(yAxis)
-                 .attr("transform", "translate(" + (margins.left+100) + ", 30)");
+//   var xScale = d3.scaleLinear()
+//                  .domain([0,d3.max(data)])
+//                  .range([height,0]);
+  
+// //   var yAxis = d3.axisLeft(yScale).tickFormat(function(d){return data.EducationalAttainment})
+// //   svg.append("g").classed("yAxis", true).call(yAxis)
+// //      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
+  
+//   /////
+//   var xAxis = d3.axisBottom(xScale);
+//     svg.append("g").classed("xAis", true)
+//                      .call(xAxis)
+//                      .attr("transform", "translate(" + margins.left + "," + (margins.top+height) + ")");
+
+//   var yAxis = d3.axisLeft(yScale)
+//                 .ticks(9)
+//                 .tickFormat(function(d,i)
+//                   {console.log("d.EA",edu[d].EducationalAttainment); 
+//                    return edu[d].EducationalAttainment});
+//       svg.append("g").classed("yAxis", true)
+//                  .call(yAxis)
+//                  .attr("transform", "translate(" + (margins.left+100) + ", 30)");
 
 }
 
