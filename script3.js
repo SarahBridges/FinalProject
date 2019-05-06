@@ -41,11 +41,11 @@ var drawAxes = function(data)
   
   var xScale = d3.scaleLinear()
                  .domain([0,5])
-                 .range([height, 0])
+                 .range([0, width])
   
   var yScale = d3.scaleLinear()
                  .domain([0, data.length])
-                 .range([0, width])
+                 .range([height, 0])
   
   var xAxis = d3.axisBottom(xScale)
   
