@@ -59,7 +59,7 @@ var drawLabels = function(data)
      .append("text")
      .text(function(d){return d.UnemploymentRate})
      .attr("x", function(d,i){return d.UnemploymentRate})
-     .attr("y", function(d,i){return ((i*barheight)+100)})
+     .attr("y", function(d,i){return ((i*barheight)+50)})
      .attr("fill", "blue")
 }
 
