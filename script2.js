@@ -12,7 +12,7 @@ var drawChart=function(dataP)
   var svg = d3.select("#chart")
               .attr("height", screen.height)
               .attr("width", screen.width)
-              .attr("transform" "translate(" + margins.left + "," + margins.top + ")")
+              .attr("transform", "translate(" + margins.left + "," + margins.top + ")")
   
   var xScale = d3.scaleLinear().domain([0, 2000]).range([0, width]);
   svg.append("g")
