@@ -4,10 +4,12 @@ var drawChart = function(data)
 {
   var screen = {width: 600, height:600}
   var margins = {top:50, bottom:50, left:50, right:50}
-  var barheight = screen.height/data.length;
+  var width = screen.width-margins.left-margins.right
+  var height = screen.height-margins.top-margins.bottom
+  var barheight = height/data.length;
   var svg = d3.select("#chart")
-              .attr("width", screen.width-margins.left-margins.right)
-              .attr("height", screen.height-margins.top-margins.bottom)
+              .attr("width", width)
+              .attr("height", height)
   
   svg.selectAll("rect")
      .data(data)
@@ -24,12 +26,14 @@ var drawChart = function(data)
 
 var drawLabels = function(data)
 {
-   var screen = {width: 600, height:600}
+  var screen = {width: 600, height:600}
   var margins = {top:50, bottom:50, left:50, right:50}
-  var barheight = screen.height/data.length;
+  var width = screen.width-margins.left-margins.right
+  var height = screen.height-margins.top-margins.bottom
+  var barheight = height/data.length;
   var svg = d3.select("#chart")
-              .attr("width", screen.width-margins.left-margins.right)
-              .attr("height", screen.height-margins.top-margins.bottom)
+              .attr("width", width)
+              .attr("height", height)
   
   svg.selectAll("text")
      .data(data)
