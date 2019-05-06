@@ -62,6 +62,7 @@ var drawLabels = function(data)
 data.then(function(data)
 {
   console.log("data:", data);
+  console.log("page building failed??");
   drawChart(data);
   drawLabels(data);
 },
