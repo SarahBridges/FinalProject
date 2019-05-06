@@ -2,79 +2,23 @@ var dataP = d3.csv("EducationData.csv");
 
 var drawChart=function(dataP)
 {
-  var width=600;
-  var height=600;
-  var barWidth=width/dataP.length;
-  console.log(dataP);
+  console.log("dataP:", dataP)
+  var screen = {height: 600, width:600}
+  var margins = {top:10, bottom:10, left:10, right:10}
+  var width = screen.width - margins.left - margins.right
+  var height = screen.height - margins.top - margins.bottom
+  var barHeight=height/dataP.length;
   
-  var svg=
-  d3.select("#chart")
-  .attr("width", width)
-  .attr("height", height)
+  var svg = d3.select("#chart").attr("height", screen.height).attr("width", screen.width)
   
-  svg.selectAll("rect")
-  .data(dataP)
-  .enter()
-  .append("rect")
-  .attr("x", function(d,i)
-    {return i*barWidth;})
-  .attr("y", function(d)
-    {
-     console.log(d.UnemploymentRate);
-     return height-d.UnemploymentRate;})
-  .attr("width", barWidth)
-  .attr("height", function(d)
-    {console.log(d);return height-d.UnemploymentRate})
-  .attr("fill", function(d)
-    {return "deepskyblue";})
-}
-
-var drawLabels=function(dataP)
-  {
-    var width=600;
-    var height=600;
-    var barWidth=width/dataP.length;
-
-    var svg=d3.select("#chart")
-    .attr("width", width)
-    .attr("height", height)
-  svg.selectAll("text")
-  .data(dataP)
-  .enter()
-  .append("text")
-  .text(function(d){
-    return d.UnemploymentRate;})
-  .attr("x", function(d,i){
-    return i * (width / dataP.length) +25;
-  })
-  .attr("y", function(d){
-    return height-(d.UnemploymentRate)+12;
-  })
-  .attr("fill", "black");
-  }
-var drawNameLabels=function(dataP)
-{
-   var width=600;
-   var height=600;
-   var barWidht=width/dataP.lenth;
+  var xScale = d3.scaleLinear().domain([0, 2000]).range([0, width]);
+  var yScale = d3.scaleLinear().domain([0,dataP.length)]).range([height,0]);
   
-  var svg=d3.select("#chart")
-  .attr("width", width)
-  .attr("height", height)
+  svg.selectAll("rect").data(dataP).enter().append("rect")
+     .attr("width", function(d){return     }).attr("height", function(d){return     })
   
-  svg.selectAll("text")
-  .data(dataP)
-  .enter()
-  .append("text")
-  .text(function(d){return d.EducationalAttainment;})
-  .attr("x", function(d,i){return i*(width/dataP.length)+30;})
-  .attr("fill", "black");
-}
-
-dataP.then(function(dataP)
-    {
-    drawChart(dataP);
-    drawLabels(dataP);
-    drawNameLabels(dataP)},
-      
-    function(err){console.log(err);})
+  var xAxis = d3.axisBottom(xScale).ticks(10)
+  var yAxis = d3.axisLeft(yScale).ticks(dataP.lentgh)
+  
+  svg.append("g").classed("xAxis", true).call(xAxis)
+  svg.append("g").classed("yAxis", true).call(yAxis)
