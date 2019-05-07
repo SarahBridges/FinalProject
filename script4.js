@@ -12,14 +12,15 @@ function(err)
 
 var initialize = function(data)
 {
+  //sizes
   var width = 600
   var height = 600
   var barheight = height/data.length
-  
+  //svg
   var svg = d3.select("#chart")
               .attr("width", width)
               .attr("height", height)
-  
+  //axis labels
   svg.selectAll("text")
      .data(data)
      .enter()
@@ -28,5 +29,19 @@ var initialize = function(data)
      .attr("x", function(d){return d})
      .attr("y", function(d,i){return i*60})
      .attr("transform", "translate(0, 65)")
+  //axes
+    //scales
+  var xScale = d3.scaleLinear()
+                 .domain([0, d3.max(data.UnemployemntRate)])
+                 .range([0, width])
 
+  var yScale = d3.scaleLinear()
+                 .domain([0, 9])
+                 .range([height, 0])
+    //axes
+  var xAxis = d3.axisBottom().scale(xScale)
+  var yAxis = d3.axisLeft().sclae(yScale)
+  
+  svg.append("g").classed("xAxis", true).call(xAxis).attr("transform", "translate(50, 570)")
+  svg.append("g").classed("yAxis", true).call(yAxis).attr("transform", "translate(50, 65)")
 }
