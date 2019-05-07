@@ -139,7 +139,7 @@
          .append("rect")
          .attr("x", function(d,i){return d.MedianUsualWeeklyEarnings;})
          .attr("y", function(d,i){return (i*barheight)})
-         .attr("width", function(d){return 1000; return xScale(d.MedianUsualWeeklyEarnings)})
+         .attr("width", function(d){return xScale(d.MedianUsualWeeklyEarnings)})
          .attr("height", barheight-5)
          .attr("fill", "teal")
          .attr("transform", "translate(181, 49)")
