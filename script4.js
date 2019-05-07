@@ -11,7 +11,6 @@ data.then(function(data)
 function(err)
 {
   console.log(err);
-}
 })
 
 var drawAxisLabels = function(data)
