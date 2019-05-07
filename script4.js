@@ -4,7 +4,6 @@ data.then(function(data)
 {
   console.log("data:", data);
   initialize(data);
-  barLabels(data);
 },
 function(err)
 {
@@ -57,24 +56,4 @@ svg.selectAll("rect")
      .attr("fill", "teal")
      .attr("transform", "translate(181, 49)")
 
-}
-var barLabels = function(data)
-{
-  //sizes
-  var width = 600
-  var height = 600
-  var barheight = height/data.length
-  //svg
-  var svg = d3.select("#chart")
-              .attr("width", width+200)
-              .attr("height", height+100)
-  svg.selectAll("text")
-     .data(data)
-     .enter()
-     .append("text")
-     .text(function(d){return d.UnemploymentRate})
-     .attr("x", function(d){return d})
-     .attr("y", function(d,i){return i*70})
-     .attr("fill", "white")
-     .attr("transform", "translate(200, 65)")
 }
