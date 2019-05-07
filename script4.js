@@ -61,11 +61,6 @@ var update = function(data, button)
 {
   d3.select("svg").remove();
   
-  if (button=="UR"){var num = 6;}
-  else if (button=="ME"){var num = 2000;}
-  else if (button=="MP"){var num = 15;}
-  else if (button=="WP"){var num = 20;}
-    //sizes
   var width = 600
   var height = 600
   var barheight = height/data.length
@@ -73,6 +68,14 @@ var update = function(data, button)
   var svg = d3.select("body").append("svg")
               .attr("width", width+200)
               .attr("height", height+100)
+  
+  if (button=="UR"){var num = 6;}
+  else if (button=="ME"){var num = 2000;}
+  else if (button=="MP"){var num = 15;}
+  else if (button=="WP"){var num = 20;}
+  console.log("num:", num)
+    //sizes
+
   //axis labels
   svg.selectAll("text")
      .data(data)
