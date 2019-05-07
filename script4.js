@@ -13,20 +13,13 @@ function(err)
   console.log(err);
 })
 
-var chart = function(data)
-{
-  var svg = d3.select("chart")
-              .attr("width", 1000)
-              .attr("height", 1000)
-}
-
 var drawAxisLabels = function(data)
 {
   var width = 600
   var height = 600
   var barheight = height/data.length
   
-  var svg = d3.select("#axisLabels")
+  var svg = d3.select("#chart")
               .attr("width", width)
               .attr("height", height)
   
@@ -43,15 +36,15 @@ var drawAxisLabels = function(data)
 
 var drawAxes = function(data)
 {
-  var svg = d3.select("#axes")
+  var svg = d3.select("#chart")
 }
 
 var drawBars = function(data)
 {
-  var svg = d3.select("#bars")
+  var svg = d3.select("#chart")
 }
 
 var drawBarLabels = function(data)
 {
-  var svg = d3.select("#barLabels")
+  var svg = d3.select("#chart")
 }
