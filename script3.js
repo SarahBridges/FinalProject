@@ -83,7 +83,7 @@ var drawAxes = function(data)
   
   svg.append("g").classed("xAxis", true)
      .call(xAxis)
-     .attr("transform", "translate(110,595)")
+     .attr("transform", "translate(110,500)")
   
   var yAxis = d3.axisLeft().scale(yScale)
   
