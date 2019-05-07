@@ -38,12 +38,12 @@ var drawAxes = function(data)
   var svg = d3.select("#axes")
 }
 
-var drawBars = functions(data)
+var drawBars = function(data)
 {
   var svg = d3.select("#bars")
 }
 
-var drawBarLabels = functions(data)
+var drawBarLabels = function(data)
 {
   var svg = d3.select("#barLabels")
 }
