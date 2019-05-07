@@ -42,6 +42,6 @@ var initialize = function(data)
   var xAxis = d3.axisBottom().scale(xScale)
   var yAxis = d3.axisLeft().scale(yScale)
   
-  svg.append("g").classed("xAxis", true).call(xAxis).attr("transform", "translate(150, 580)")
+  svg.append("g").classed("xAxis", true).call(xAxis).attr("transform", "translate(150, 590)")
   svg.append("g").classed("yAxis", true).call(yAxis).attr("transform", "translate(150, 50)")
 }
