@@ -16,7 +16,7 @@ function(err)
 var drawAxisLabels = function(data)
 {
   var width = 600
-  var height = 1200
+  var height = 600
   var barheight = height/data.length
   
   var svg = d3.select("#axisLabels")
