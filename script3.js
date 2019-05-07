@@ -26,7 +26,7 @@ var drawBars = function(data)
      .append("rect")
      .attr("x", function(d,i)
            {console.log("d", d); 
-            console.log("d.MUWE", d.UnemploymentRate); 
+            console.log("d.UR", d.UnemploymentRate); 
             return d.UnemploymentRate;})
      .attr("y", function(d,i){return i*barheight;})
      .attr("width", function(d){return xScale(d.UnemploymentRate)})
@@ -69,7 +69,7 @@ var drawAxes = function(data)
   
   var svg = d3.select("#chart")
               .attr("width", width+400)
-              .attr("height", height+200)
+              .attr("height", height+400)
   
   var xScale = d3.scaleLinear()
                  .domain([0, 2000])
@@ -83,7 +83,7 @@ var drawAxes = function(data)
   
   svg.append("g").classed("xAxis", true)
      .call(xAxis)
-     .attr("transform", "translate(120,565)")
+     .attr("transform", "translate(120,570")
   
   var yAxis = d3.axisLeft().scale(yScale)
   
@@ -118,7 +118,7 @@ var drawAxisLabels = function(data)
      .text(function(d){return d.EducationalAttainment})
      .attr("x", function(d){return d.EducationalAttainment})
      .attr("y", function(d, i){return i* barheight})
-     .attr("transform", "translate(100, 30)")
+     .attr("transform", "translate(200, 50)")
 }
 
 data.then(function(data)
