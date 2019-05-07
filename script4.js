@@ -18,8 +18,8 @@ var initialize = function(data)
   var barheight = height/data.length
   //svg
   var svg = d3.select("#chart")
-              .attr("width", width)
-              .attr("height", height)
+              .attr("width", width+200)
+              .attr("height", height+200)
   //axis labels
   svg.selectAll("text")
      .data(data)
