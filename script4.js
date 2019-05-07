@@ -15,8 +15,8 @@ function(err)
 
 var drawAxisLabels = function(data)
 {
-  var width = 200
-  var height = 600
+  var width = 600
+  var height = 1200
   var barheight = height/data.length
   
   var svg = d3.select("#axisLabels")
@@ -30,6 +30,7 @@ var drawAxisLabels = function(data)
      .text(function(d){return d.EducationalAttainment})
      .attr("x", function(d){return d})
      .attr("y", function(d,i){return i*barheight})
+     //.attr("transform", "translate(0,)")
 
 }
 
