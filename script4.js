@@ -32,7 +32,7 @@ var initialize = function(data)
   //axes
     //scales
   var xScale = d3.scaleLinear()
-                 .domain([0, d3.max(data.UnemployemntRate)])
+                 .domain([0, 5])
                  .range([0, width])
 
   var yScale = d3.scaleLinear()
