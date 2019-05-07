@@ -198,7 +198,7 @@
          .data(data)
          .enter()
          .append("rect")
-         .attr("width", function(d){return xScale(d.MenBelowPovertLevel);})
+         .attr("width", function(d){return xScale(d.MenBelowPovertyLevel);})
          .attr("x", function(d){return d;})
          .attr("y", function(d,i){return (i*barheight)})
          .attr("height", barheight-5)
