@@ -27,7 +27,7 @@ var initialize = function(data)
      .append("text")
      .text(function(d){return d.EducationalAttainment})
      .attr("x", function(d){return d})
-     .attr("y", function(d,i){return i*60})
+     .attr("y", function(d,i){return i*65})
      .attr("transform", "translate(0, 65)")
   //axes
     //scales
@@ -42,6 +42,6 @@ var initialize = function(data)
   var xAxis = d3.axisBottom().scale(xScale)
   var yAxis = d3.axisLeft().scale(yScale)
   
-  svg.append("g").classed("xAxis", true).call(xAxis).attr("transform", "translate(100, 550)")
-  svg.append("g").classed("yAxis", true).call(yAxis).attr("transform", "translate(100, 65)")
+  svg.append("g").classed("xAxis", true).call(xAxis).attr("transform", "translate(150, 540)")
+  svg.append("g").classed("yAxis", true).call(yAxis).attr("transform", "translate(150, 65)")
 }
