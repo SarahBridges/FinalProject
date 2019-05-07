@@ -1,8 +1,8 @@
 EducationalAttainment,UnemploymentRate,MedianUsusalWeeklyEarnings,MenBelowPovertyLevel,WomenBelowPovertyLevel
 "Doctoral Degree",1.6,1825,"NA","NA"
-"Professional Degree",1.5,"1,884","NA","NA"
-"Master's Degree",2.1,"1,434","NA","NA"
-"Bachelor's Degree",2.2,"1,198","NA","NA"
+"Professional Degree",1.5,1884,"NA","NA"
+"Master's Degree",2.1,1434,"NA","NA"
+"Bachelor's Degree",2.2,1198,"NA","NA"
 "Bachelor's and Higher","NA","NA",1.8,1.6
 "Associate's Degree",2.8,862,2.8,4.7
 "Some College, No Degree",3.7,802,5.2,8.1
