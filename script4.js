@@ -17,7 +17,7 @@ var initialize = function(data)
   var height = 600
   var barheight = height/data.length
   //svg
-  var svg = d3.select("#chart")
+  var svg = d3.select("body").append("svg")
               .attr("width", width+200)
               .attr("height", height+100)
   //axis labels
@@ -59,7 +59,7 @@ svg.selectAll("rect")
 }
 var update = function(data, button)
 {
-  d3.select("#chart").remove();
+  d3.select("svg").remove();
   
   if (button=="UR"){var num = 6;}
   else if (button=="ME"){var num = 2000;}
@@ -70,7 +70,7 @@ var update = function(data, button)
   var height = 600
   var barheight = height/data.length
   //svg
-  var svg = d3.select("svg").append("svg")
+  var svg = d3.select("body").append("svg")
               .attr("width", width+200)
               .attr("height", height+100)
   //axis labels
