@@ -1,6 +1,6 @@
 var data = d3.csv("EducationData.csv");
 
-var drawChart = function(data)
+var drawBars = function(data)
 {
   var screen = {width: 600, height:600}
   var margins = {top:10, bottom:10, left:100, right:10}
@@ -35,6 +35,30 @@ var drawChart = function(data)
      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
   
 }
+
+var drawLabels = function(data)
+{
+  var screen = {width: 600, height:600}
+  var margins = {top:10, bottom:10, left:100, right:10}
+  var width = screen.width-margins.left-margins.right
+  var height = screen.height-margins.top-margins.bottom
+  var barheight = height/data.length;
+  
+  var svg = d3.select("#chart")
+              .attr("width", width)
+              .attr("height", height)
+  
+  svg.selectAll("text")
+     .data(data)
+     .enter()
+     .append("text")
+     .text(function(d){return d.UnemploymentRate})
+     .attr("x", function(d,i){return d.UnemploymentRate})
+     .attr("y", function(d,i){return ((i*barheight)+50)})
+     .attr("fill", "black")
+     .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
+}
+
 var drawAxes = function(data)
 {
   var screen = {width: 600, height:600}
@@ -63,9 +87,6 @@ var drawAxes = function(data)
   
   var yAxis = d3.axisLeft().scale(yScale)
   
-  yAxis.ticks(["Doctoral Degree", "Professionsal Degree", "Master's Degree", "Bachelor's Degree", "Bachelor's Degree and Higher", "Associate's Degree", "Some College, No Degree", "High School Diploma", "Less than High School Diploma"])
-       .tickFormat(["Doctoral Degree", "Professionsal Degree", "Master's Degree", "Bachelor's Degree", "Bachelor's Degree and Higher", "Associate's Degree", "Some College, No Degree", "High School Diploma", "Less than High School Diploma"])
-  
   svg.append("g").classed("yAxis", true)
      .call(yAxis)
      .attr("transform", "translate(110, 10)")
@@ -76,29 +97,6 @@ var drawAxes = function(data)
 //     .tickFormat()
 //     .attr("transform", "translate(" + margins.left+","+(margins.top+height+")"))
 
-}
-
-var drawLabels = function(data)
-{
-  var screen = {width: 600, height:600}
-  var margins = {top:10, bottom:10, left:100, right:10}
-  var width = screen.width-margins.left-margins.right
-  var height = screen.height-margins.top-margins.bottom
-  var barheight = height/data.length;
-  
-  var svg = d3.select("#chart")
-              .attr("width", width)
-              .attr("height", height)
-  
-  svg.selectAll("text")
-     .data(data)
-     .enter()
-     .append("text")
-     .text(function(d){return d.UnemploymentRate})
-     .attr("x", function(d,i){return d.UnemploymentRate})
-     .attr("y", function(d,i){return ((i*barheight)+50)})
-     .attr("fill", "black")
-     .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
 }
 
 var drawAxisLabels = function(data)
@@ -127,7 +125,7 @@ data.then(function(data)
 {
   console.log("data:", data);
   console.log("page building failed??");
-  //drawChart(data);
+  //drawBars(data);
   //drawLabels(data);
   drawAxes(data);
   drawAxisLabels(data);
