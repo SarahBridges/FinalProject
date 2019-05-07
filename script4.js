@@ -81,7 +81,7 @@ var update = function(data, button)
   //axes
     //scales
   var xScale = d3.scaleLinear()
-                 .domain([0, function(d){if(button=="UR"){return 6}
+                 .domain([0, function(d){if(button="UR"){return 6}
                                          else if (button="ME"){return 2000}
                                          else if (button="MP"){return 15}
                                          else if (button="WP"){return 20}}])
@@ -101,7 +101,7 @@ svg.selectAll("rect")
      .data(data)
      .enter()
      .append("rect")
-     .attr("x", function(d,i){if(button=="UR"){return d.UnemploymentRate}
+     .attr("x", function(d,i){if(button="UR"){return d.UnemploymentRate}
                               else if (button="ME"){return d.MedianUsualWeeklyEarnings}
                               else if (button="MP"){return d.MenBelowPovertyLevel}
                               else if (button="WP"){return d.WomenBelowPovertyLevel}})
