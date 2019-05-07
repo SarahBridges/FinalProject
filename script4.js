@@ -13,6 +13,13 @@ function(err)
   console.log(err);
 })
 
+var chart = function(data)
+{
+  var svg = d3.select("chart")
+              .attr("width", 1000)
+              .attr("height", 1000)
+}
+
 var drawAxisLabels = function(data)
 {
   var width = 600
