@@ -54,7 +54,7 @@ var drawAxes = function(data)
      .attr("transform", "translate(110,595)")
   
   var yAxis = d3.axisLeft().scale(yScale)
-                .tickValues(function(d,i){return d.EducationalAttainment})
+                .tickValues(["Doctoral Degree", "Professionsal Degree", "Master's Degree", "Bachelor's Degree", "Bachelor's Degree and Higher", "Associate's Degree", "Some College, No Degree", "High School Diploma", "Less than High School Diploma"])
   
   svg.append("g").classed("yAxis", true)
      .call(yAxis)
