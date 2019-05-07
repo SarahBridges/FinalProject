@@ -88,15 +88,16 @@
     function updateME(){
       var data = d3.csv("EducationData.csv")
 
-          data.then(function(data)
-          {
-            console.log("data:", data);
-            updateME(data);
-          },
-            function(err)
-          {
-            console.log(err);
-          })
+      data.then(function(data)
+      {
+        console.log("data:", data);
+        updateME(data);
+      },
+        function(err)
+      {
+        console.log(err);
+      })
+
       var updateME = function(data)
       {
         d3.select("svg").remove()
@@ -133,16 +134,16 @@
         svg.append("g").classed("xAxis", true).call(xAxis).attr("transform", "translate(185, 650)")
         svg.append("g").classed("yAxis", true).call(yAxis).attr("transform", "translate(180, 50)")
   
-      svg.selectAll("rect")
-         .data(data)
-         .enter()
-         .append("rect")
-         .attr("width", function(d){return xScale(d.MedianUsualWeeklyEarnings)})
-         .attr("x", function(d){return d;})
-         .attr("y", function(d,i){return (i*barheight)})
-         .attr("height", barheight-5)
-         .attr("fill", "teal")
-         .attr("transform", "translate(181, 49)")
+        svg.selectAll("rect")
+           .data(data)
+           .enter()
+           .append("rect")
+           .attr("x", function(d){return d;})
+           .attr("y", function(d,i){return (i*barheight)})
+           .attr("width", function(d){return xScale(d.MedianUsualWeeklyEarnings)})
+           .attr("height", barheight-5)
+           .attr("fill", "teal")
+           .attr("transform", "translate(181, 49)")
 
       }
     }
