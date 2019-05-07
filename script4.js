@@ -59,6 +59,8 @@ svg.selectAll("rect")
 }
 var update = function(data, button)
 {
+  d3.select("#chart").remove();
+  
   if (button=="UR"){var num = 6;}
   else if (button=="ME"){var num = 2000;}
   else if (button=="MP"){var num = 15;}
