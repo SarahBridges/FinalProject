@@ -19,7 +19,7 @@ var initialize = function(data)
   //svg
   var svg = d3.select("#chart")
               .attr("width", width+200)
-              .attr("height", height+200)
+              .attr("height", height+100)
   //axis labels
   svg.selectAll("text")
      .data(data)
