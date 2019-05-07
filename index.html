@@ -10,6 +10,16 @@
       h1 {text-align: center}
       h3 {text-align: center}
     </style>
+  </head>
+
+  <body>
+    <h1>The Importance of Education</h1>
+    <h3>Educational Attainment, Job Earnings, and Poverty</h3>
+    
+    <input type="button" value="Unemployment Rate" name="UR" onclick="updateUR">
+    <input type="button" value="Median Usual Weekly Earnings" name="ME" onclick="updateME">
+    <input type="button" value="Men Below Poverty Level" name="MP" onclick="updateMP">
+    <input type="button" value="Women Below Poverty Level" name="WP" onclick="updateWP">
     <script>
     var data = d3.csv("EducationData.csv")
 
@@ -214,16 +224,6 @@ svg.selectAll("rect")
 
 }
     </script>
-  </head>
-
-  <body>
-    <h1>The Importance of Education</h1>
-    <h3>Educational Attainment, Job Earnings, and Poverty</h3>
-    
-    <input type="button" value="Unemployment Rate" name="UR" onclick="updateUR">
-    <input type="button" value="Median Usual Weekly Earnings" name="ME" onclick="updateME">
-    <input type="button" value="Men Below Poverty Level" name="MP" onclick="updateMP">
-    <input type="button" value="Women Below Poverty Level" name="WP" onclick="updateWP">
     
   </body>
 </html>
