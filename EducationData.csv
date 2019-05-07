@@ -1,10 +1,10 @@
-EducationalAttainment,UnemploymentRate,MedianUsusalWeeklyEarnings,MenBelowPovertyLevel,WomenBelowPovertyLevel
-DoctoralDegree,1.6,1825,NA,NA
-ProfessionalDegree,1.5,1884,NA,NA
-Master'sDegree,2.1,1434,NA,NA
-Bachelor'sDegree,2.2,1198,NA,NA
-Bachelor'sDegreeandHigher,NA,NA,1.8,1.6
-Associate'sDegree,2.8,862,2.8,4.7
-SomeCollegeNoDegree,3.7,802,5.2,8.1
-HighSchool,4.1,730,6.2,9.6
-LessThanHighSchool,5.6,553,14.1,19.7
+"Educational Attainment","Unemployment Rate","Median Ususal Weekly Earnings","Men Below Poverty Level","Women Below Poverty Level"
+"Doctoral Degree",1.6,1825,"NA","NA"
+"Professional Degree",1.5,1884,"NA","NA"
+"Master's Degree",2.1,1434,"NA","NA"
+"Bachelor's Degree",2.2,1198,"NA","NA"
+"Bachelor's and Higher","NA","NA",1.8,1.6
+"Associate's Degree",2.8,862,2.8,4.7
+"Some College, No Degree",3.7,802,5.2,8.1
+"High School",4.1,730,6.2,9.6
+"Less Than High School",5.6,553,14.1,19.7
