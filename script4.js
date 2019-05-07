@@ -45,5 +45,14 @@ var initialize = function(data)
   svg.append("g").classed("xAxis", true).call(xAxis).attr("transform", "translate(180, 650)")
   svg.append("g").classed("yAxis", true).call(yAxis).attr("transform", "translate(180, 50)")
   
-
+  svg.selectAll("rect")
+     .data(data)
+     .enter()
+     .append("rect")
+     .attr("x", function(d,i){return d.UnemploymentRate})
+     .attr("y", function(d,i){return (i*barheight)})
+     .attr("width", function(d){return xScale(d.Unemploymentrate)})
+     .attr("height", barheight)
+     .attr("fill", "teal")
+     .attr("transform", "translate(185, 55)")
 }
