@@ -36,7 +36,7 @@ var initialize = function(data)
                  .range([0, width])
 
   var yScale = d3.scaleLinear()
-                 .domain([0, 9])
+                 .domain([0, 8])
                  .range([height, 0])
     //axes
   var xAxis = d3.axisBottom().scale(xScale)
