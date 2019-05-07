@@ -18,10 +18,10 @@ var drawChart = function(data)
      .append("rect")
      .attr("x", function(d,i)
            {console.log("d", d); 
-            console.log("d.MUWE", d.MedianUsualWeeklyEarnings); 
-            return d.MedianUsualWeeklyEarnings;})
+            console.log("d.MUWE", d.UnemploymentRate); 
+            return d.UnemploymentRate;})
      .attr("y", function(d,i){return i*barheight;})
-     .attr("width", function(d){return d.MedianUsualWeeklyEarnings})
+     .attr("width", function(d){return d.UnemploymentRate})
      .attr("height", barheight)
      .attr("fill", "teal")
      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
