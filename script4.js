@@ -70,7 +70,7 @@ var update = function(data, button)
   var height = 600
   var barheight = height/data.length
   //svg
-  var svg = d3.select("#chart")
+  var svg = d3.select("svg").append("svg")
               .attr("width", width+200)
               .attr("height", height+100)
   //axis labels
