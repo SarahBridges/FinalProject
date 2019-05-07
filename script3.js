@@ -54,11 +54,12 @@ var drawAxes = function(data)
      .attr("transform", "translate(110,595)")
   
   var yAxis = d3.axisLeft().scale(yScale)
+                .tickValues(function(d,i){return d.EducationalAttainment})
   
   svg.append("g").classed("yAxis", true)
      .call(yAxis)
      .attr("transform", "translate(110, 10)")
-     .tickValues(function(d,i){return d.EducationalAttainment})
+
   
 //    .attr("fill", "black")
 //     .ticks(9)
