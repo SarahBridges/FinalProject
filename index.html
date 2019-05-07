@@ -9,6 +9,7 @@
     <style>
       h1 {text-align: center}
       h3 {text-align: center}
+      input {align: center}
     </style>
   </head>
 
@@ -136,7 +137,7 @@
          .data(data)
          .enter()
          .append("rect")
-         .attr("x", function(d,i){return d.UnemploymentRate;})
+         .attr("x", function(d,i){return d.MedianUsualWeeklyEarnings;})
          .attr("y", function(d,i){return (i*barheight)})
          .attr("width", function(d){return xScale(d.MedianUsualWeeklyEarnings)})
          .attr("height", barheight-5)
