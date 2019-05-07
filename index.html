@@ -259,7 +259,7 @@
          .data(data)
          .enter()
          .append("rect")
-         .attr("x", function(d,i){return d.WomenBelowPovertyLevel;})
+         .attr("x", function(d){return d;})
          .attr("y", function(d,i){return (i*barheight)})
          .attr("width", function(d){return xScale(d.WomenBelowPovertyLevel)})
          .attr("height", barheight-5)
