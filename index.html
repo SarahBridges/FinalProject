@@ -136,7 +136,7 @@
          .data(data)
          .enter()
          .append("rect")
-         .attr("x", function(d,i){console.log(d.MedianUsusalWeeklyEarnings); return d.UnemploymentRate;})
+         .attr("x", function(d,i){return d.UnemploymentRate;})
          .attr("y", function(d,i){return (i*barheight)})
          .attr("width", function(d){return xScale(d.MedianUsualWeeklyEarnings)})
          .attr("height", barheight-5)
