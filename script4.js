@@ -30,7 +30,7 @@ var drawAxisLabels = function(data)
      .text(function(d){return d.EducationalAttainment})
      .attr("x", function(d){return d})
      .attr("y", function(d,i){return i*60})
-     .attr("transform", "translate(0, 50)")
+     .attr("transform", "translate(0, 65)")
 
 }
 
