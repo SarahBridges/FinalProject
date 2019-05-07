@@ -3,17 +3,14 @@ var data = d3.csv("EducationData.csv")
 data.then(function(data)
 {
   console.log("data:", data);
-  drawAxisLabels(data);
-  drawAxes(data);
-  drawBars(data);
-  drawBarLabels(data);
+  initialize(data);
 },
 function(err)
 {
   console.log(err);
 })
 
-var drawAxisLabels = function(data)
+var initialize = function(data)
 {
   var width = 600
   var height = 600
@@ -32,19 +29,4 @@ var drawAxisLabels = function(data)
      .attr("y", function(d,i){return i*60})
      .attr("transform", "translate(0, 65)")
 
-}
-
-var drawAxes = function(data)
-{
-  var svg = d3.select("#chart")
-}
-
-var drawBars = function(data)
-{
-  var svg = d3.select("#chart")
-}
-
-var drawBarLabels = function(data)
-{
-  var svg = d3.select("#chart")
 }
