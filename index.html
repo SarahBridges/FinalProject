@@ -112,7 +112,7 @@ function updateME(){
      .data(data)
      .enter()
      .append("text")
-     .text(function(d){return d.MedianUsualWeeklyEarnings})
+     .text(function(d){return d.EducationalAttainment})
      .attr("x", function(d){return d})
      .attr("y", function(d,i){return i*70})
      .attr("transform", "translate(0, 65)")
@@ -151,7 +151,7 @@ function updateMP(){
       data.then(function(data)
       {
         console.log("data:", data);
-        updateUR(data);
+        updateMP(data);
       },
         function(err)
       {
@@ -212,7 +212,7 @@ svg.selectAll("rect")
       data.then(function(data)
       {
         console.log("data:", data);
-        updateUR(data);
+        updateWP(data);
       },
         function(err)
       {
