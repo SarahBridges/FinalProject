@@ -54,5 +54,5 @@ var initialize = function(data)
      .attr("width", function(d){return xScale(d.UnemploymentRate)})
      .attr("height", barheight)
      .attr("fill", "teal")
-     .attr("transform", "translate(185, 55)")
+     .attr("transform", "translate(181, 51)")
 }
