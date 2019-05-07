@@ -55,10 +55,11 @@ var drawAxes = function(data)
   
   var yAxis = d3.axisLeft().scale(yScale)
   
+  yAxis.ticks(["Doctoral Degree", "Professionsal Degree", "Master's Degree", "Bachelor's Degree", "Bachelor's Degree and Higher", "Associate's Degree", "Some College, No Degree", "High School Diploma", "Less than High School Diploma"])
+  
   svg.append("g").classed("yAxis", true)
      .call(yAxis)
      .attr("transform", "translate(110, 10)")
-     .tickValues(["Doctoral Degree", "Professionsal Degree", "Master's Degree", "Bachelor's Degree", "Bachelor's Degree and Higher", "Associate's Degree", "Some College, No Degree", "High School Diploma", "Less than High School Diploma"])
 
   
 //    .attr("fill", "black")
