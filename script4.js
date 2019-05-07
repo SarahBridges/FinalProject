@@ -36,12 +36,12 @@ var initialize = function(data)
                  .range([0, width])
 
   var yScale = d3.scaleLinear()
-                 .domain([0, 8])
+                 .domain([1, 8])
                  .range([height, 0])
     //axes
   var xAxis = d3.axisBottom().scale(xScale)
   var yAxis = d3.axisLeft().scale(yScale)
   
-  svg.append("g").classed("xAxis", true).call(xAxis).attr("transform", "translate(160, 590)")
-  svg.append("g").classed("yAxis", true).call(yAxis).attr("transform", "translate(160, 50)")
+  svg.append("g").classed("xAxis", true).call(xAxis).attr("transform", "translate(180, 590)")
+  svg.append("g").classed("yAxis", true).call(yAxis).attr("transform", "translate(180, 50)")
 }
