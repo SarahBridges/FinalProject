@@ -120,7 +120,7 @@
           //scales
         var xScale = d3.scaleLinear()
                        .domain([0, 2000])
-                      .range([0, width])
+                       .range([0, width])
 
         var yScale = d3.scaleLinear()
                        .domain(8)
@@ -136,7 +136,7 @@
          .data(data)
          .enter()
          .append("rect")
-         .attr("x", function(d,i){return d.MedianUsualWeeklyEarnings;})
+         .attr("x", function(d,i){console.log(d.MedianUsusalWeeklyEarnings); return d.MedianUsualWeeklyEarnings;})
          .attr("y", function(d,i){return (i*barheight)})
          .attr("width", function(d){return xScale(d.MedianUsualWeeklyEarnings)})
          .attr("height", barheight-5)
