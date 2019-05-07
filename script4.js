@@ -4,6 +4,7 @@ data.then(function(data)
 {
   console.log("data:", data);
   initialize(data);
+  barLabels(data);
 },
 function(err)
 {
@@ -45,7 +46,7 @@ var initialize = function(data)
   svg.append("g").classed("xAxis", true).call(xAxis).attr("transform", "translate(180, 650)")
   svg.append("g").classed("yAxis", true).call(yAxis).attr("transform", "translate(180, 50)")
   
-  var bar = svg.selectAll("rect")
+svg.selectAll("rect")
      .data(data)
      .enter()
      .append("rect")
@@ -55,8 +56,19 @@ var initialize = function(data)
      .attr("height", barheight-5)
      .attr("fill", "teal")
      .attr("transform", "translate(181, 49)")
-    
-bar.selectAll("text")
+
+}
+var barLabels = function(data)
+{
+  //sizes
+  var width = 600
+  var height = 600
+  var barheight = height/data.length
+  //svg
+  var svg = d3.select("#chart")
+              .attr("width", width+200)
+              .attr("height", height+100)
+  svg.selectAll("text")
      .data(data)
      .enter()
      .append("text")
