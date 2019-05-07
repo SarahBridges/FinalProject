@@ -56,7 +56,11 @@ var initialize = function(data)
      .attr("fill", "teal")
      .attr("transform", "translate(181, 49)")
   
-  svg.selectAll("text")
+  var svgt = d3.select("#chart")
+              .attr("width", width+200)
+              .attr("height", height+100)
+    
+  svgt.selectAll("text")
      .data(data)
      .enter()
      .append("text")
