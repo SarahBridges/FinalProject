@@ -86,11 +86,33 @@ var drawLabels = function(data)
      .data(data)
      .enter()
      .append("text")
-     .text(function(d){return d.MedianUsualWeeklyEarnings})
-     .attr("x", function(d,i){return d.MedianUsualWeeklyEarnings})
+     .text(function(d){return d.UnemploymentRate})
+     .attr("x", function(d,i){return d.UnemploymentRate})
      .attr("y", function(d,i){return ((i*barheight)+50)})
      .attr("fill", "black")
      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
+}
+
+var drawAxisLabels = function(data)
+{
+  var screen = {width: 600, height:600}
+  var margins = {top:10, bottom:10, left:100, right:10}
+  var width = screen.width-margins.left-margins.right
+  var height = screen.height-margins.top-margins.bottom
+  var barheight = height/data.length;
+  
+  var svg = d3.select("#chart")
+              .attr("width", width)
+              .attr("height", height)
+  
+  svg.selectAll("text")
+     .data(data)
+     .enter()
+     .append("text")
+     .text(function(d){return d.EducationalAttainment})
+     .attr("x", function(d){return d.EducationalAttainment})
+     .attr("y", function(d, i){return i* barheight})
+     .attr("transform", "translate(100, 30)")
 }
 
 data.then(function(data)
@@ -100,6 +122,7 @@ data.then(function(data)
   drawChart(data);
   drawLabels(data);
   drawAxes(data);
+  drawAxisLabels(data);
 },
 function(err){console.log(err);
 })
