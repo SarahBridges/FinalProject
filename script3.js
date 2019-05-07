@@ -12,6 +12,14 @@ var drawChart = function(data)
               .attr("width", width)
               .attr("height", height)
   
+  var xScale = d3.scaleLinear()
+                 .domain([0, 5])
+                 .range([0, width])
+  
+  var yScale = d3.scaleLinear()
+                 .domain([0, data.length])
+                 .range([height, 0])
+  
   svg.selectAll("rect")
      .data(data)
      .enter()
@@ -21,7 +29,7 @@ var drawChart = function(data)
             console.log("d.MUWE", d.UnemploymentRate); 
             return d.UnemploymentRate;})
      .attr("y", function(d,i){return i*barheight;})
-     .attr("width", function(d){return d.UnemploymentRate})
+     .attr("width", function(d){return xScale(d.UnemploymentRate)})
      .attr("height", barheight)
      .attr("fill", "teal")
      .attr('transform', 'translate(' + (margins.left +10)+ ','+(margins.top + 1)+')');
