@@ -55,4 +55,13 @@ var initialize = function(data)
      .attr("height", barheight)
      .attr("fill", "teal")
      .attr("transform", "translate(181, 49)")
+  
+  svg.selectAll("text")
+     .data(data)
+     .enter()
+     .append("text")
+     .text(function(d){return d.UnemploymentRate})
+     .attr("x", function(d){return d})
+     .attr("y", function(d,i){return i*70})
+     .attr("transfomr", "translate(200, 65)")
 }
